@@ -1,0 +1,23 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local database
+data/trige.db
+*.db
+
+# Uploaded patient images
+uploads/*
+!uploads/.gitkeep
+
+# Environment variables and secrets
+.env
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
