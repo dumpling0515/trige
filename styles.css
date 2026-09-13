@@ -1,0 +1,344 @@
+/* =========================================
+   TRIGE v0.1
+   Static Imaging Research Prototype
+   ========================================= */
+
+:root {
+    --trige-bg: #050A12;
+    --trige-panel: rgba(11, 18, 32, 0.82);
+    --trige-panel-light: rgba(15, 27, 44, 0.90);
+
+    --trige-cyan: #35D9FF;
+    --trige-blue: #4699FF;
+    --trige-violet: #8B7CFF;
+    --trige-green: #32D6A0;
+
+    --trige-text: #E8F1FA;
+    --trige-muted: #89A0B7;
+
+    --trige-border: rgba(85, 168, 210, 0.17);
+}
+
+
+/* ---------- MAIN BACKGROUND ---------- */
+
+.stApp {
+    background:
+        radial-gradient(
+            circle at 15% 5%,
+            rgba(30, 127, 190, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(115, 82, 255, 0.08),
+            transparent 30%
+        ),
+        #050A12;
+}
+
+
+/* ---------- APP WIDTH ---------- */
+
+.block-container {
+    max-width: 1180px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+
+/* ---------- HERO ---------- */
+
+.trige-hero {
+    position: relative;
+
+    padding: 30px 34px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid var(--trige-border);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(13, 27, 44, 0.95),
+            rgba(7, 14, 25, 0.95)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+
+    overflow: hidden;
+}
+
+
+.trige-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: -150px;
+    right: -80px;
+
+    background: var(--trige-cyan);
+
+    filter: blur(120px);
+
+    opacity: 0.12;
+
+    pointer-events: none;
+}
+
+
+.trige-kicker {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.19em;
+
+    font-weight: 700;
+
+    color: var(--trige-cyan);
+
+    margin-bottom: 8px;
+}
+
+
+.trige-title {
+    font-size: clamp(2.2rem, 6vw, 4.4rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 800;
+
+    color: #F5FAFF;
+
+    margin: 0;
+}
+
+
+.trige-subtitle {
+    color: var(--trige-muted);
+
+    max-width: 680px;
+
+    margin-top: 15px;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- STATUS BADGES ---------- */
+
+.trige-status-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+.trige-pill {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    background: rgba(53, 217, 255, 0.07);
+
+    border: 1px solid rgba(53, 217, 255, 0.17);
+
+    color: #BFEFFF;
+
+    font-size: 0.76rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+.trige-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #32D6A0;
+
+    box-shadow:
+        0 0 10px rgba(50, 214, 160, 0.8);
+}
+
+
+/* ---------- SECTION LABEL ---------- */
+
+.trige-section-label {
+    color: #6E899F;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    margin-bottom: 7px;
+}
+
+
+/* ---------- RESULT CARD ---------- */
+
+.trige-result {
+    padding: 24px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(53, 217, 255, 0.18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 30, 48, 0.95),
+            rgba(8, 15, 26, 0.95)
+        );
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,0.20);
+}
+
+
+.trige-score-label {
+    color: #839AAF;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.trige-score {
+    font-size: 3.8rem;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.05em;
+
+    color: #F5FBFF;
+
+    margin-top: 12px;
+}
+
+
+.trige-score-unit {
+    color: var(--trige-muted);
+
+    font-size: 0.85rem;
+
+    margin-top: 9px;
+}
+
+
+/* ---------- INFO GRID ---------- */
+
+.trige-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(140px, 1fr));
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.trige-info-item {
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid rgba(255,255,255,0.055);
+}
+
+
+.trige-info-name {
+    font-size: 0.67rem;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+
+    color: #657D92;
+}
+
+
+.trige-info-value {
+    margin-top: 5px;
+
+    font-size: 0.91rem;
+
+    font-weight: 600;
+
+    color: #DDECF7;
+}
+
+
+/* ---------- DISCLAIMER ---------- */
+
+.trige-disclaimer {
+    margin-top: 32px;
+
+    padding: 15px 18px;
+
+    border-left:
+        3px solid rgba(53, 217, 255, 0.55);
+
+    background:
+        rgba(53, 217, 255, 0.035);
+
+    color: #7E96AA;
+
+    font-size: 0.79rem;
+
+    line-height: 1.55;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.trige-footer {
+    margin-top: 45px;
+
+    text-align: center;
+
+    color: #52697C;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.06em;
+}

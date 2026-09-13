@@ -1,0 +1,37 @@
+[theme]
+base = "dark"
+
+primaryColor = "#35D9FF"
+
+backgroundColor = "#050A12"
+
+secondaryBackgroundColor = "#0B1220"
+
+textColor = "#E8F1FA"
+
+font = "sans-serif"
+
+borderColor = "#1C3045"
+
+showWidgetBorder = true
+
+baseRadius = "0.8rem"
+
+buttonRadius = "0.6rem"
+
+dataframeBorderColor = "#183047"
+
+dataframeHeaderBackgroundColor = "#0D1A28"
+
+
+[theme.sidebar]
+
+backgroundColor = "#07101B"
+
+secondaryBackgroundColor = "#0D1825"
+
+primaryColor = "#35D9FF"
+
+textColor = "#DDEAF5"
+
+borderColor = "#172B3E"

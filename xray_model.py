@@ -1,15 +1,16 @@
 import torch
 import torchxrayvision as xrv
+import streamlit as st
 
 
 MODEL_NAME = "densenet121-res224-all"
 
 
+@st.cache_resource
 def load_model():
     model = xrv.models.DenseNet(weights=MODEL_NAME)
     model.eval()
     return model
-
 
 MODEL = load_model()
 
