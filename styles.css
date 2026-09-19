@@ -3310,13 +3310,15 @@ div[data-testid="stDialog"] button:hover {
 .trige-loading-screen {
     position: relative;
 
+    width: 100%;
     min-height: 72vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 
     overflow: hidden;
+
+    box-sizing: border-box;
 
     border:
         1px solid
@@ -3342,38 +3344,64 @@ div[data-testid="stDialog"] button:hover {
 }
 
 
+/* ------------------------------------------------------------
+   CENTER THE ENTIRE HUD
+   ------------------------------------------------------------ */
+
 .loading-core {
     position: relative;
     z-index: 5;
 
-    width: 100%;
+    width: min(760px, 92%);
+    max-width: 760px;
+
+    min-width: 0;
+
+    margin-left: auto;
+    margin-right: auto;
 
     display: flex;
     flex-direction: column;
 
     align-items: center;
+    justify-content: center;
 
     text-align: center;
+
+    box-sizing: border-box;
 }
 
+
+/* ------------------------------------------------------------
+   CIRCULAR ANALYSIS HUD
+   ------------------------------------------------------------ */
 
 .loading-orbit {
     position: relative;
 
-    width:
-        min(430px, 65vw);
+    width: min(430px, 74vw);
+    max-width: 430px;
 
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
+
+    flex: 0 0 auto;
+
+    min-width: 0;
+
+    margin: 0 auto;
 
     display: grid;
     place-items: center;
 }
 
 
+/* All rings remain locked to the orbit */
 .loading-ring {
     position: absolute;
 
     border-radius: 50%;
+
+    pointer-events: none;
 }
 
 
@@ -3426,6 +3454,7 @@ div[data-testid="stDialog"] button:hover {
     box-shadow:
         0 0 25px
         rgba(128, 220, 230, 0.08),
+
         inset 0 0 20px
         rgba(128, 220, 230, 0.04);
 
@@ -3437,9 +3466,26 @@ div[data-testid="stDialog"] button:hover {
 }
 
 
+/* ------------------------------------------------------------
+   CENTER TEXT
+   ------------------------------------------------------------ */
+
 .loading-center {
     position: relative;
     z-index: 3;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 }
 
 
@@ -3451,26 +3497,45 @@ div[data-testid="stDialog"] button:hover {
         var(--mono);
 
     letter-spacing: 0.17em;
+
+    text-align: center;
+
+    white-space: nowrap;
 }
 
 
+/* IMPORTANT:
+   This was the part stretching the layout sideways.
+*/
 .loading-title {
-    margin-top: 10px;
+    width: 100%;
+
+    margin:
+        12px auto
+        0;
+
+    padding-left: 0;
 
     color: var(--cream);
 
     font-size:
         clamp(
-            2.7rem,
-            6vw,
-            5.4rem
+            2.4rem,
+            5vw,
+            4.5rem
         );
 
     font-weight: 700;
 
-    letter-spacing: 0.17em;
+    line-height: 1;
 
-    padding-left: 0.17em;
+    letter-spacing: 0.12em;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
 
     text-shadow:
         0 0 12px
@@ -3485,7 +3550,9 @@ div[data-testid="stDialog"] button:hover {
 
 
 .loading-subtitle {
-    margin-top: 8px;
+    width: 100%;
+
+    margin-top: 12px;
 
     color: var(--green);
 
@@ -3494,12 +3561,29 @@ div[data-testid="stDialog"] button:hover {
         var(--mono);
 
     letter-spacing: 0.16em;
+
+    text-align: center;
+
+    white-space: nowrap;
 }
 
 
+/* ------------------------------------------------------------
+   STATUS BAR
+   ------------------------------------------------------------ */
+
 .loading-status {
+    width: fit-content;
+    max-width: 100%;
+
+    margin:
+        22px auto
+        0;
+
     display: flex;
     flex-wrap: wrap;
+
+    align-items: center;
     justify-content: center;
 
     border-top:
@@ -3513,43 +3597,58 @@ div[data-testid="stDialog"] button:hover {
 
 
 .loading-status span {
-    padding: 8px 15px;
+    padding:
+        8px 15px;
 
     border-right:
         1px solid
         rgba(128, 220, 230, 0.12);
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
     font:
         9px
         var(--mono);
 
-    letter-spacing: 0.08em;
+    letter-spacing:
+        0.08em;
+
+    white-space:
+        nowrap;
 }
 
 
 .loading-status span:last-child {
-    border-right: none;
+    border-right:
+        none;
 }
 
 
 .loading-status span:first-child {
-    color: var(--green);
+    color:
+        var(--green);
 }
 
 
 .loading-status i {
-    display: inline-block;
+    display:
+        inline-block;
 
-    width: 6px;
-    height: 6px;
+    width:
+        6px;
 
-    margin-right: 8px;
+    height:
+        6px;
 
-    border-radius: 50%;
+    margin-right:
+        8px;
 
-    background: var(--green);
+    border-radius:
+        50%;
+
+    background:
+        var(--green);
 
     box-shadow:
         0 0 7px
@@ -3563,31 +3662,54 @@ div[data-testid="stDialog"] button:hover {
 }
 
 
+/* ------------------------------------------------------------
+   BOTTOM TEXT
+   ------------------------------------------------------------ */
+
 .loading-message {
-    max-width: 620px;
+    width:
+        100%;
 
-    margin-top: 20px;
+    max-width:
+        620px;
 
-    color: var(--cream);
+    margin:
+        20px auto
+        0;
+
+    color:
+        var(--cream);
 
     font:
         12px / 1.7
         var(--mono);
+
+    text-align:
+        center;
 }
 
 
 .loading-caution {
-    max-width: 550px;
+    width:
+        100%;
 
-    margin-top: 8px;
+    max-width:
+        550px;
 
-    color: var(--muted);
+    margin:
+        8px auto
+        0;
+
+    color:
+        var(--muted);
 
     font:
         10px / 1.6
         var(--mono);
-}
 
+    text-align:
+        center;
+}
 
 /* scanning overlay */
 
