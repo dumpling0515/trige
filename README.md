@@ -15,7 +15,7 @@ The current v0.1 release focuses on static chest X-ray analysis. It uses a pretr
 
 ## Demo
 
-▶ **[Watch the Trige v0.1 Demo](YOUR_DEMO_VIDEO_LINK)**
+▶ **[Watch the Trige v0.1 Demo](https://youtu.be/GUdw_is1dmI)**
 
 ![Trige Dashboard](screenshots/trige_dashboard.png)
 
