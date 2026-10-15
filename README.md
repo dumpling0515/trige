@@ -8,6 +8,8 @@ Trige is an explainable medical-AI research prototype that explores how medical 
 
 The current v0.1 release focuses on static chest X-ray analysis. It uses a pretrained DenseNet121 model through TorchXRayVision, surfaces a pneumonia-associated model score, provides model explainability, and stores analysis metadata locally using SQLite.
 
+Link To Access: https://trige-demo.streamlit.app/
+
 > **Research and educational prototype only.**  
 > Trige has not been clinically validated and is not intended for diagnosis, treatment, triage decisions, or other patient-care use.
 
